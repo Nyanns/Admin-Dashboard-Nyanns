@@ -1,0 +1,241 @@
+:root {
+    --red: rgb(239, 35, 60);
+    --yellow: #F7D88B;
+    --white: rgb(237, 242, 244);
+    --blue: blue;
+    --main-bg-color: rgb(33, 37, 41); /* Warna abu-abu tua */
+    --secondary-main-bg-color: rgba(33, 37, 41, 0.95); /* Warna abu-abu tua dengan transparansi */
+    --border-color: rgb(217, 40, 39); /* Warna border */
+    
+    --box-shadow: 2px 3px 5px #dbdbdb, -2px 3px 5px #dbdbdb;
+}
+
+/* Autofill snippet from CSSTricks */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    -webkit-text-fill-color: white !important;
+    -webkit-box-shadow: 0 0 0px 1000px #000 inset !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+@font-face {
+    font-family: "pixel";
+    src: url('/Admin-Dashboard-Nyanns/Media/Fonts/PixelifySans-VariableFont.ttf') format('truetype');
+    font-display: swap;
+}
+
+
+
+.container {
+    font-family: "pixel";
+    word-spacing: 0.15rem;
+}
+
+/* Container grid setup */
+.container {
+    display: grid;
+    grid-template-columns: minmax(200px, 1fr) 3.5fr;
+    /* Sidebar (min 200px) and Main content */
+    grid-template-rows: 1fr 10fr;
+    /* Header, main content, and footer */
+    height: 100vh;
+    /* Full viewport height */
+}
+
+/* ========================================================================== */
+/* Selectors for the header start here. */
+/* ========================================================================== */
+
+/* Header spans across both columns */
+.header {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    background-color: var(--main-bg-color);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0px;
+}
+
+.default {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-header {
+    padding-block: 16px;
+    padding-inline: 16px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.left-header ul {
+    display: flex; /* Ubah 'ul' menjadi flex container jika perlu */
+    gap: 0.8rem; /* Tambahkan jarak antara item di dalam ul */
+    align-items: center; /* Atur perataan vertikal */
+    justify-content: flex-start; /* Atur perataan horizontal */
+}
+
+.left-header .add-profil-button {
+    border-radius: 50%;
+    border: var(--border-color) solid 1px;
+}
+
+.left-header .add-profil-button:hover {
+    border: var(--white) solid 1px;
+}
+
+.left-header .add-profil {
+    background-color: var(--main-bg-color);
+    width: 2rem;
+    height: 2rem;
+}
+
+.left-header ul li {
+    list-style: none; /* Hilangkan bullet point */
+    background-color: var(--white);
+    border-radius: 50%;
+}
+
+.left-header ul li:hover {
+    background-color: var(--red);
+}
+
+.left-header img {
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    object-fit: cover;
+}
+
+.right-header {
+    padding-block: 16px;
+    padding-inline: 16px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+}
+
+.search > button {
+    all: unset; /* Menghapus semua gaya default */
+    display: inline-block; /* Agar tombol tetap berfungsi seperti elemen inline */
+    cursor: pointer; /* Menjaga agar cursor tetap pointer ketika di hover */
+}
+
+.right-header .search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px; /* Jarak antara input dan button */
+    border: none;
+}
+
+.search img {
+    width: 2rem;
+    height: 2rem;
+}
+
+.search input {
+    width: 200px;
+    height: 1.5rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 30px;
+    background-color: var(--secondary-main-bg-color);
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+    color: aliceblue;
+}
+
+/* Menambahkan efek shadow saat fokus pada input */
+.search-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0px 0px 5px var(--primary-color);
+}
+
+.right-header .alert {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px; /* Jarak antara input dan button */
+}
+
+.alert img {
+    width: 2rem;
+    height: 2rem;
+}
+
+.alert > button {
+    all: unset; /* Menghapus semua gaya default */
+    display: inline-block; /* Agar tombol tetap berfungsi seperti elemen inline */
+    cursor: pointer; /* Menjaga agar cursor tetap pointer ketika di hover */
+}
+
+.right-header .profil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px; /* Jarak antara input dan button */
+}
+
+.profil .icon {
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    object-fit: cover;
+    background-color: var(--white);
+}
+
+.profil .icon:hover {
+    background-color: var(--red);
+}
+
+.profil .dropdown-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.profil > button {
+    all: unset; /* Menghapus semua gaya default */
+    display: inline-block; /* Agar tombol tetap berfungsi seperti elemen inline */
+    cursor: pointer; /* Menjaga agar cursor tetap pointer ketika di hover */
+}
+
+/* ========================================================================== */
+/* Selectors for the sidebar start here. */
+/* ========================================================================== */
+
+/* Sidebar occupies the first column */
+.sidebar {
+    background-color: var(--main-bg-color);
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    border-right: 1px solid var(--border-color);
+}
+
+/* ========================================================================== */
+/* Selectors for the main body of the page start here. */
+/* ========================================================================== */
+
+/* Main content occupies the second column */
+.main {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    background-color: var(--secondary-main-bg-color);
+}
+
+/* Footer/Data section spans across both columns */
+.grid-container {
+    /* Footer or additional content can be added here */
+}
+
+/* ========================================================================== */
