@@ -350,12 +350,15 @@ select:-webkit-autofill:focus {
  
 .heading {
     padding: 16px;
+    padding-block: 24px;
 
     border-bottom: 1px solid var(--border-color);
+    outline: 0.01px solid var(--border-color); /* Outline di luar elemen */
 
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: var(--white);
 }
 
 /* Selectors for the left side of the heading start here. */
@@ -368,8 +371,19 @@ select:-webkit-autofill:focus {
     gap: 16px;
 }
 
-.heading img[src$="png"] {
-    width: 75px;
+.left p {
+    font-size: 2rem;
+}
+
+.left img {
+    width: 5rem;
+    height: 5rem;
+    background-color: var(--white);
+    border-radius: 50%;
+}
+
+.left img:hover {
+    background-color: var(--red);
 }
 
 /* Selectors for the right side of the heading start here. */
@@ -381,15 +395,19 @@ select:-webkit-autofill:focus {
 
 .heading button {
     padding: 4px 8px;
+    cursor: pointer;
 
-    background-color: #ffffff;
-    border: none;
+    border: 1px solid var(--border-color);
     border-radius: 12px;
-    box-shadow: var(--box-shadow);
 }
 
 .heading button:hover {
-    background-color: var(--main-bg-color-dark);
+    background-color: var(--border-color);
+}
+
+.right img {
+    width: 1.5rem;
+    height: 1.5rem;
 }
 
 .heading button .content {
@@ -397,11 +415,407 @@ select:-webkit-autofill:focus {
     justify-content: center;
     align-items: center;
     gap: 4px;
+    
 }
 
 /* ========================================================================== */
-/* Footer styles */
+/* your-projects styles */
 /* ========================================================================== */
+
+.your-projects {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    gap: 16px;
+}
+
+.your-projects h3 {
+    font-size: 1.5rem;
+    color: var(--white);
+}
+
+.projects {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+}
+
+.project {
+    background-color: var(--white);
+    padding: 8px;
+    border-radius: 12px;
+    border-left: 8px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: var(--secondary-main-bg-color);
+}
+
+.project p {
+    margin-top: 8px;
+}
+
+.project .content {    
+    display: flex;
+    flex-direction: column;
+}
+
+.icons {
+    margin-top: 8px;
+    display: flex;
+    flex-direction: row;
+    align-self: flex-end;
+
+    gap: 8px;
+}
+
+.icons img {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+
+/* Selectors for the content below the "Your Projects" section start here. */
+
 .grid-container {
-    /* Footer or additional content can be added here */
+    display: grid;
+    grid-template-columns: 1fr auto auto auto;
+    grid-template-rows: 1fr auto;
+    gap: 16px;
+}
+
+
+/* Data style */
+.data {
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-left: 16px;
+}
+
+.data h3 {
+    font-size: 1.5rem;
+    color: var(--white);
+}
+
+.graph img {
+    border-radius: 2%;
+}
+
+
+/* Selectors for the "Top Performance" section start here. */
+
+.top-performance {
+    padding: 0 16px 16px 16px;
+
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.top-performance h3 {
+    color: var(--white);
+    font-size: 1.5rem;
+}
+
+.top-performance .content {
+    padding: 16px;
+
+    background-color: white;
+    border-radius: 12px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.content img {
+    width: 3rem;
+    height: 3rem;
+}
+
+.top-performance .member {
+    display: flex;
+    gap: 32px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.member .title,
+.member > p {
+    flex: 1;
+}
+
+.member .title > p:last-child {
+    font-size: 0.9rem;
+    color: #545454;
+}
+
+.progress {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex: 2;
+}
+
+.bar {
+    width: 100%;
+    height: 10px;
+
+    position: relative;
+
+    background-color: var(--main-bg-color-dark);
+    border-radius: 12px;
+
+    flex: 1;
+}
+
+.percentage {
+    height: 10px;
+
+    position: absolute;
+
+    border-radius: 12px;
+}
+
+.member.one .percentage {
+    width: calc(100% / 10 * 6.2);
+
+    background-color: var(--yellow);
+}
+
+.member.two .percentage {
+    width: calc(100% / 10 * 4.3);
+    
+    background-color: var(--red);
+}
+
+.member.three .percentage {
+    width: calc(100% / 10 * 8.1);
+
+    background-color: greenyellow;
+}
+
+/* Selectors for the "Add" sections start here. */
+
+.add.left,
+.add.right {
+    text-align: center;
+
+    padding: 16px;
+
+    background-color: white;
+    border-radius: 12px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+.add.left p,
+.add.right p {
+    font-size: 1rem;
+}
+
+.add.left img,
+.add.right img {
+    width: 2rem;
+    height: 2rem;
+}
+
+.add.left button,
+.add.right button {
+    padding: 0.75rem 1.5rem; /* Memberikan padding yang nyaman */
+    background-color: var(--primary-color); /* Warna background utama, ganti dengan warna yang sesuai */
+    color: var(--white); /* Warna teks putih */
+    border: none; /* Menghapus border */
+    border-radius: 0.5rem; /* Membuat sudut membulat */
+    font-size: 1rem; /* Ukuran font yang lebih besar untuk keterbacaan */
+    font-weight: 500; /* Sedikit lebih tebal untuk menonjolkan tombol */
+    cursor: pointer; /* Mengubah cursor menjadi pointer */
+    transition: all 0.3s ease; /* Transisi halus untuk hover */
+}
+
+/* Efek hover yang lebih menarik */
+.add.left button:hover,
+.add.right button:hover {
+    background-color: var(--secondary-color); /* Warna background berubah pada hover */
+    transform: translateY(-2px); /* Memberikan efek floating pada tombol */
+}
+
+/* Efek saat tombol ditekan */
+.add.left button:active,
+.add.right button:active {
+    transform: translateY(0); /* Mengembalikan tombol ke posisi semula */
+}
+
+.add.left {
+    margin: 44px 8px 16px 0;
+
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.add.right {
+    margin: 44px 0 16px 8px;
+
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+}
+
+
+/* stat and footer style */
+.stats {
+    grid-column: 4 / 5;
+    grid-row: 1 / 3;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    height: 100%;
+    padding: 0 16px 16px 4px;
+}
+
+.stats h3 {
+    font-size: 1.5rem;
+    color: var(--white);
+}
+
+.stats .content {
+    color: black;
+    border-radius: 12px;
+
+    background-color: var(--white);
+    padding: 32px 0px 16px 0px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex: 1;
+    font-size: 1.2rem;
+}
+
+.stats select {
+    padding: 4px 8px;
+
+    background-color: var(--border-color);
+    color: var(--white);
+    border-radius: 4px;
+
+    align-self: flex-start;
+}
+
+/* Selectors for the pie chart start here. */
+
+.stats .graph {
+    padding-bottom: 4rem;
+    padding-inline: 2rem;
+
+    border-bottom: 2px solid var(--border-color);
+}
+
+.stats img {
+    width: 2rem;
+    height: 2rem;
+}
+
+.pie {
+    width: 225px;
+    height: 225px;
+
+    background-image: conic-gradient(
+        rgba(255, 0, 0, 0.704) 70deg, 
+        rgba(0, 0, 255, 0.702) 0 235deg, 
+        rgba(172, 255, 47, 0.911) 0
+    );
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center {
+    width: 112.5px;
+    height: 112.5px;
+
+    background-color: white;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Selectors for the legend of the pie chart start here. */
+
+.stats .legend {
+    width: 100%;
+
+    padding: 0 16px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.red,
+.blue,
+.yellow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.legend .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.red .color {
+    width: 15px;
+    height: 15px;
+
+    background-color: rgba(255, 0, 0, 0.704);
+}
+
+.blue .color {
+    width: 15px;
+    height: 15px;
+
+    background-color: rgba(0, 0, 255, 0.702);
+}
+
+.yellow .color {
+    width: 15px;
+    height: 15px;
+
+    background-color: rgba(172, 255, 47, 0.911);
+}
+
+/* Selectors for the footer start here. */
+
+.footer a {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    text-decoration: none;
+    color: var(--secondary-main-bg-color);
+
+.footer img {
+    width: 1.5rem;
+    height: auto;
+    }
 }
